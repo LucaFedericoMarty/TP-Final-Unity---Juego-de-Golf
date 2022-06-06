@@ -61,6 +61,7 @@ public class PelotaMovement : MonoBehaviour
             //transform.eulerAngles += new Vector3(0, 0, rotation);
             //transform.Translate(translation, 0, 0);
             rb.AddForce(transform.eulerAngles += new Vector3(0,0, rotation) * translation,ForceMode.Impulse);
+            //rb.AddForce(0, 0, translation);
             isPressing = false;
         }
 
