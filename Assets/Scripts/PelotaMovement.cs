@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PelotaMovement : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PelotaMovement : MonoBehaviour
     public  float rotation;
     public float translation;
     Rigidbody rb;
+    public Text contadorTiempo;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,8 @@ public class PelotaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        contadorTiempo.text = Mathf.Floor(timeElapsed).ToString();
+
         // Si el click izquierdo es presionado, poner a isPressing como true
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -63,6 +67,7 @@ public class PelotaMovement : MonoBehaviour
             rb.AddForce(transform.eulerAngles += new Vector3(0,0, rotation) * translation,ForceMode.Impulse);
             //rb.AddForce(0, 0, translation);
             isPressing = false;
+            timeElapsed = 0;
         }
 
 
