@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Ganaste.unity
+    guid: e56072ec625f759498b1b663ef7ba48a
+  - enabled: 1
+    path: Assets/Scenes/Inicio de Juego.unity
+    guid: 2fbf5013de100e140bcf9d2a24a1c54b
+  - enabled: 1
+    path: Assets/Scenes/Juego de Golf.unity
+    guid: e12479681bd1a1e4b99cbadf2bcd4476
+  - enabled: 1
+    path: Assets/Scenes/Perdiste.unity
+    guid: bbdea0d6cecc044408f51a0813960c78
   m_configObjects: {}
