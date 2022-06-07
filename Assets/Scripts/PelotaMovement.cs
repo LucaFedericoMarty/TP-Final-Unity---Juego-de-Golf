@@ -70,6 +70,7 @@ public class PelotaMovement : MonoBehaviour
             isPressing = false;
             timeElapsed = 0;
             contadorDeTiros++;
+            // Hacer el movimiento con variables inresadas por el usuario
         }
 
 
