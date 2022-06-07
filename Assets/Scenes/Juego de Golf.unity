@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -771,8 +771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0b7982b4e15064e92b7c9754c890e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ganaste: {fileID: 0}
-  perdiste: {fileID: 0}
+  ganaste: {fileID: 8300000, guid: dd0ae240f0703cc4ab6e2bbe48b43571, type: 3}
+  perdiste: {fileID: 8300000, guid: 1f08b78c75935a64f8d32333daa000fd, type: 3}
 --- !u!4 &1144351470
 Transform:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7692959dbee4e724d9222ffd2a8f3a3e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
