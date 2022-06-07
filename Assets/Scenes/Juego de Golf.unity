@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -485,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771133672}
   m_LocalRotation: {x: 0.058027238, y: 0.70472187, z: -0.05802727, w: 0.7047218}
-  m_LocalPosition: {x: -13.499999, y: 6.5000005, z: -0.00000025199597}
+  m_LocalPosition: {x: -13.5, y: 6.6, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1197968541}
@@ -534,11 +534,11 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!54 &771133676
@@ -898,9 +898,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7692959dbee4e724d9222ffd2a8f3a3e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1015,9 +1015,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dca79bb3c010314c817ce3bfe98d774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizonatlSpeed: 2
+  verticalSpeed: 2
   rotation: 0
   translation: 0
   contadorTiempo: {fileID: 130364532}
+  CameraPelota: {fileID: 771133672}
 --- !u!54 &1197968537
 Rigidbody:
   m_ObjectHideFlags: 0
