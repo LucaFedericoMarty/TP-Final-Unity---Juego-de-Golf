@@ -20,6 +20,7 @@ public class PelotaMovement : MonoBehaviour
     public float translation;
     Rigidbody rb;
     public Text contadorTiempo;
+    int contadorDeTiros;
 
     // Start is called before the first frame update
     void Start()
@@ -68,10 +69,11 @@ public class PelotaMovement : MonoBehaviour
             //rb.AddForce(0, 0, translation);
             isPressing = false;
             timeElapsed = 0;
+            contadorDeTiros++;
         }
 
 
-        if (transform.position.y < 0 && cantidadDeTiros <= 10)
+        if (transform.position.y < 0 && contadorDeTiros <= cantidadDeTiros )
         {
             ganaste = true;
         }
