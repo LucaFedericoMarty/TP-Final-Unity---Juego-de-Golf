@@ -22,7 +22,9 @@ public class PelotaMovement : MonoBehaviour
 
 
     Rigidbody rb;
+
     public Text contadorTiempo;
+    public Text contadorTiros;
 
     public GameObject CameraPelota;
 
@@ -39,6 +41,11 @@ public class PelotaMovement : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
         contadorTiempo.text = Mathf.Floor(timeElapsed).ToString();
+        cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros");
+
+        cantidadDeTiros = contadorDeTiros;
+
+        contadorTiros.text = contadorDeTiros.ToString();
 
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -53,6 +60,8 @@ public class PelotaMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             rb.AddForce(verticalSpeed, 0, 0);
+            timeElapsed = 0;
+            contadorDeTiros--;
         }
 
         // Si el click izquierdo es presionado, poner a isPressing como true

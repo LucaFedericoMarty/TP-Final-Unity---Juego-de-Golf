@@ -9,9 +9,16 @@ public class GuardarTirosPasarEscena : MonoBehaviour
     public Text cantidadTiros;
     public Text mensajeDeError;
 
+    int numeroDeTiros;
+
+    private void Awake()
+    {
+        LoadData();
+    }
+
     public void guardarCantidadDeTiros()
     {
-        int numeroDeTiros = int.Parse(cantidadTiros.text);
+        numeroDeTiros = int.Parse(cantidadTiros.text);
 
         if (cantidadTiros.text == "")
         {
@@ -34,5 +41,21 @@ public class GuardarTirosPasarEscena : MonoBehaviour
             SceneManager.LoadScene("Juego de Golf");
         }
 
+    }
+
+
+    private void OnDestroy()
+    {
+        SaveData(); // Cuando se destruya este objeto, en este caso cuando pasemos de script, guarda la informacion que seteamos en la funcion SaveData.
+    }
+
+    private void SaveData()
+    {
+        PlayerPrefs.SetInt("Numero de Tiros", numeroDeTiros);
+    }
+
+    private void LoadData()
+    {
+        numeroDeTiros = PlayerPrefs.GetInt("Numero de Tiros", 0);
     }
 }

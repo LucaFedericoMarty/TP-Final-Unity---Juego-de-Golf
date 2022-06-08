@@ -269,7 +269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125.29, y: 96.326}
+  m_AnchoredPosition: {x: -312.29, y: 256}
   m_SizeDelta: {x: 175.4198, y: 47.34723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130364532
@@ -415,7 +415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125.29, y: 23.674}
+  m_AnchoredPosition: {x: -312.29, y: 176}
   m_SizeDelta: {x: 175.4198, y: 47.34723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276768947
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1020,6 +1020,7 @@ MonoBehaviour:
   rotation: 0
   translation: 0
   contadorTiempo: {fileID: 130364532}
+  contadorTiros: {fileID: 276768947}
   CameraPelota: {fileID: 771133672}
 --- !u!54 &1197968537
 Rigidbody:
@@ -1214,6 +1215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e77b54cf3bb14429c99c13bef444b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalSpeedIncreased: 0
 --- !u!1001 &1389649971
 PrefabInstance:
   m_ObjectHideFlags: 0
