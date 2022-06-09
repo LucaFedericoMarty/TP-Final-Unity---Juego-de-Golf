@@ -38,11 +38,14 @@ public class PelotaMovement : MonoBehaviour
         timeElapsed += Time.deltaTime;
         contadorTiempo.text = Mathf.Floor(timeElapsed).ToString();
 
+        rotation *= Time.deltaTime;
+        translation *= Time.deltaTime;
+
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros");
         contadorDeTiros = cantidadDeTiros;
         contadorTiros.text = contadorDeTiros.ToString();
 
-        transform.eulerAngles += new Vector3(0, horizonatlSpeed, 0);
+        transform.eulerAngles += new Vector3(0, rotation, 0);
 
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
