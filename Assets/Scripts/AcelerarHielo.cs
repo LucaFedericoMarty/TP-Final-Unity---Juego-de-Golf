@@ -16,7 +16,7 @@ public class AcelerarHielo : MonoBehaviour
     void Update()
     {
         PelotaMovement variableVelocidad = GetComponent<PelotaMovement>(); // Invoco al scrpit del cual quiero sacar la velocidad de la pelota, le asigno un nombre, y mediante el GetComponent, puede acceder a todos sus datos
-        verticalSpeedIncreased = variableVelocidad.verticalSpeed + 0.5f; // A la variable creada en este script, le doy el valor de la velocidad de la pelota establecido en el otro scrpit. Ademas, le sumo 0.5 para que su velocidad sea mayor en este caso.
+        verticalSpeedIncreased = variableVelocidad.translation + 0.5f; // A la variable creada en este script, le doy el valor de la velocidad de la pelota establecido en el otro scrpit. Ademas, le sumo 0.5 para que su velocidad sea mayor en este caso.
     }
 
     void OnCollisionStay(Collision col)

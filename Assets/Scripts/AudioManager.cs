@@ -5,8 +5,6 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     AudioSource source;
-    public AudioClip ganaste;
-    public AudioClip perdiste;
 
     // Start is called before the first frame update
     void Start()

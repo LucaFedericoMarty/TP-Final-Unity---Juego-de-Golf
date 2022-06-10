@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PelotaMovement : MonoBehaviour
 {
@@ -14,8 +15,6 @@ public class PelotaMovement : MonoBehaviour
 
     // Variable Float
     float timeElapsed;
-    public float horizonatlSpeed;
-    public float verticalSpeed;
     public  float rotation;
     public float translation;
     Rigidbody rb;
@@ -53,10 +52,30 @@ public class PelotaMovement : MonoBehaviour
             contadorDeTiros--;
         }
 
-        
 
-            ///transform.eulerAngles -= new Vector3(0, 0, horizonatlSpeed);
-        
+        if (transform.position.y < 0 && contadorDeTiros > 0)
+        {
+            ganaste = true;
+        }
+
+        else if (cantidadDeTiros > 10)
+        {
+            ganaste = false;
+        }
+
+        if (ganaste)
+        {
+            SceneManager.LoadScene("Ganaste");
+        }
+
+        else if (ganaste == false)
+        {
+            SceneManager.LoadScene("Perdiste");
+        }
+
+
+        ///transform.eulerAngles -= new Vector3(0, 0, horizonatlSpeed);
+
         // Si el click izquierdo es presionado, poner a isPressing como true
 
         //if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -95,21 +114,5 @@ public class PelotaMovement : MonoBehaviour
         //    // Hacer el movimiento con variables inresadas por el usuario
         //}
 
-
-        //if (transform.position.y < 0 && contadorDeTiros <= cantidadDeTiros )
-        //{
-        //    ganaste = true;
-        //}
-
-        //else if (cantidadDeTiros > 10)
-        //{
-        //    ganaste = false;
-        //}
-
-        //if (ganaste)
-        //{
-
-        //}
-        
     }
 }
