@@ -49,7 +49,7 @@ public class PelotaMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(translation, 0, 0);
+            rb.AddForce(transform.forward * translation, ForceMode.Impulse);
             contadorDeTiros--;
         }
 
