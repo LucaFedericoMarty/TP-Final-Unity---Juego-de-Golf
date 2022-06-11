@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PelotaMovement : MonoBehaviour
 {
-    public Camera cam;
-
     //Variable Bool
     bool isPressing;
     bool entro;
@@ -31,6 +29,8 @@ public class PelotaMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         isPressing = false;
         entro = false;
+        cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros");
+        contadorDeTiros = cantidadDeTiros;
     }
 
     // Update is called once per frame
@@ -42,8 +42,6 @@ public class PelotaMovement : MonoBehaviour
         //rotation *= Time.deltaTime;
         //translation *= Time.deltaTime;
 
-        cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros");
-        contadorDeTiros = cantidadDeTiros;
         contadorTiros.text = contadorDeTiros.ToString();
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -56,10 +54,14 @@ public class PelotaMovement : MonoBehaviour
             transform.eulerAngles -= new Vector3(0, rotation, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+        if (timeElapsed < 30)
         {
-            rb.AddForce(transform.forward * translation, ForceMode.Impulse);
-            contadorDeTiros--;
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(transform.forward * translation, ForceMode.Impulse);
+                contadorDeTiros--;
+                timeElapsed = 0;
+            }
         }
 
         void OnTriggerEnter(Collider pelota)
