@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PelotaMovement : MonoBehaviour
 {
+    public Camera cam;
+
     //Variable Bool
-    bool ganaste;
     bool isPressing;
+    bool entro;
 
     // Variables Int
     int cantidadDeTiros;
@@ -28,7 +30,7 @@ public class PelotaMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         isPressing = false;
-        ganaste = false;
+        entro = false;
     }
 
     // Update is called once per frame
@@ -37,14 +39,22 @@ public class PelotaMovement : MonoBehaviour
         timeElapsed += Time.deltaTime;
         contadorTiempo.text = Mathf.Floor(timeElapsed).ToString();
 
-        rotation *= Time.deltaTime;
-        translation *= Time.deltaTime;
+        //rotation *= Time.deltaTime;
+        //translation *= Time.deltaTime;
 
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros");
         contadorDeTiros = cantidadDeTiros;
         contadorTiros.text = contadorDeTiros.ToString();
 
-        transform.eulerAngles += new Vector3(0, rotation, 0);
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.eulerAngles += new Vector3(0, rotation, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.eulerAngles -= new Vector3(0, rotation, 0);
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
@@ -52,23 +62,20 @@ public class PelotaMovement : MonoBehaviour
             contadorDeTiros--;
         }
 
-
-        if (transform.position.y < 0 && contadorDeTiros > 0)
+        void OnTriggerEnter(Collider pelota)
         {
-            ganaste = true;
+            if (pelota.gameObject.name == "Pelota de Golf")
+            {
+                entro = true;
+            }
         }
 
-        else if (cantidadDeTiros > 10)
-        {
-            ganaste = false;
-        }
-
-        if (ganaste)
+        if (entro && contadorDeTiros > 0)
         {
             SceneManager.LoadScene("Ganaste");
         }
 
-        else if (ganaste == false)
+        else if (contadorDeTiros == 0)
         {
             SceneManager.LoadScene("Perdiste");
         }
