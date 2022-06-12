@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerCondition : MonoBehaviour
+public class tocaGanas : MonoBehaviour
 {
     public bool entro;
 
@@ -18,11 +18,12 @@ public class TriggerCondition : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider pelota)
+    void OnCollisionEnter(Collider ball)
     {
-        if (pelota.gameObject.name == "Pelota de Golf")
+        if (ball.gameObject.name == "Pelota de Golf")
         {
-
+            Debug.Log("Toco");
+            entro = true;
         }
     }
 }

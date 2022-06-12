@@ -23,12 +23,11 @@ public class PelotaMovement : MonoBehaviour
     public Text contadorTiros;
     int contadorDeTiros;
 
-    entraPelota eP;
+    tocaGanas tG;
 
     // Start is called before the first frame update
     void Start()
     {
-        eP.entro = entroPelota;
         rb = GetComponent<Rigidbody>();
         isPressing = false;
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros");
@@ -38,6 +37,7 @@ public class PelotaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         timeElapsed += Time.deltaTime;
         contadorTiempo.text = Mathf.Floor(timeElapsed).ToString();
 
@@ -66,7 +66,7 @@ public class PelotaMovement : MonoBehaviour
             }
         }
 
-        if (entroPelota && contadorDeTiros > 0)
+        if (entroPelota == true && contadorDeTiros > 0)
         {
             SceneManager.LoadScene("Ganaste");
         }
@@ -76,6 +76,12 @@ public class PelotaMovement : MonoBehaviour
             SceneManager.LoadScene("Perdiste");
         }
 
+        if (timeElapsed > 30)
+        {
+            SceneManager.LoadScene("Perdiste");
+        }
+
+        entroPelota = tG.entro;
 
         ///transform.eulerAngles -= new Vector3(0, 0, horizonatlSpeed);
 
