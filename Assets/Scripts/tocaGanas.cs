@@ -18,12 +18,16 @@ public class tocaGanas : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collider ball)
+    void OnCollisionEnter(Collision ball)
     {
         if (ball.gameObject.name == "Pelota de Golf")
         {
-            Debug.Log("Toco");
             entro = true;
+        }
+
+        else
+        {
+            entro = false;
         }
     }
 }
