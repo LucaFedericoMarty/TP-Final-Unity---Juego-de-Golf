@@ -8,7 +8,7 @@ public class PelotaMovement : MonoBehaviour
 {
     //Variable Bool
     bool isPressing;
-    bool entro;
+    bool entroPelota;
 
     // Variables Int
     int cantidadDeTiros;
@@ -23,12 +23,14 @@ public class PelotaMovement : MonoBehaviour
     public Text contadorTiros;
     int contadorDeTiros;
 
+    entraPelota eP;
+
     // Start is called before the first frame update
     void Start()
     {
+        eP.entro = entroPelota;
         rb = GetComponent<Rigidbody>();
         isPressing = false;
-        entro = false;
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros");
         contadorDeTiros = cantidadDeTiros;
     }
@@ -64,20 +66,12 @@ public class PelotaMovement : MonoBehaviour
             }
         }
 
-        void OnTriggerEnter(Collider pelota)
-        {
-            if (pelota.gameObject.name == "Pelota de Golf")
-            {
-                entro = true;
-            }
-        }
-
-        if (entro && contadorDeTiros > 0)
+        if (entroPelota && contadorDeTiros > 0)
         {
             SceneManager.LoadScene("Ganaste");
         }
 
-        else if (contadorDeTiros == 0)
+        if (contadorDeTiros == 0)
         {
             SceneManager.LoadScene("Perdiste");
         }
