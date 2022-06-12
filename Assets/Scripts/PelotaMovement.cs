@@ -64,6 +64,11 @@ public class PelotaMovement : MonoBehaviour
                 contadorDeTiros--;
                 timeElapsed = 0;
             }
+
+            //if (Input.GetKeyDown(KeyCode.Mouse1))
+            //{
+            //    translation = 0;
+            //}
         }
 
         if (entroPelota == true && contadorDeTiros > 0)
