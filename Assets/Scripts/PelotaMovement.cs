@@ -26,6 +26,8 @@ public class PelotaMovement : MonoBehaviour
     public Text contadorTiempo;
     public Text contadorTiros;
 
+    public GameObject prefabPelotitas;
+
     // Traigo el script de tocaGanas para agarrar el valor de una variable
     tocaGanas tG;
 
@@ -36,6 +38,14 @@ public class PelotaMovement : MonoBehaviour
         //isPressing = false; Variable que no utilizo mas, pero la conservo para ver si en el futuro puedo cambiar la mecanica del funcionamiento del tiro
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros"); // Agarro el valor que se ingreso en el scrpit de GuardarTirosPasarEscena y lo guardo en una variable local
         contadorDeTiros = cantidadDeTiros; // Le guardo el valor de los tiros totales a una variable que va a iniciar con ese valor, para luego ir sabiendo la cantidad de tiros que tiene
+
+        GameObject clon;
+
+        for (int i = 0; i < cantidadDeTiros; i++)
+        {
+            clon = Instantiate(prefabPelotitas);
+            clon.transform.Translate(i, 0, 0);
+        }
     }
 
     // Update is called once per frame
