@@ -44,7 +44,7 @@ public class PelotaMovement : MonoBehaviour
         for (int i = 0; i < cantidadDeTiros; i++)
         {
             clon = Instantiate(prefabPelotitas);
-            clon.transform.Translate(i, 0, 0);
+            clon.transform.Translate(-7, 5, i);
         }
     }
 
