@@ -29,7 +29,7 @@ public class PelotaMovement : MonoBehaviour
     public GameObject prefabPelotitas;
 
     // Traigo el script de tocaGanas para agarrar el valor de una variable
-    tocaGanas tG;
+    public tocaGanas tG;
 
     // Start is called before the first frame update
     void Start()

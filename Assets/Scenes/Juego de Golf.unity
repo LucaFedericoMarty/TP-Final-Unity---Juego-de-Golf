@@ -1152,6 +1152,7 @@ MonoBehaviour:
   contadorTiros: {fileID: 276768947}
   prefabPelotitas: {fileID: 9201646022114531055, guid: 93779423d63bc7340aa5252c2c3dee91,
     type: 3}
+  tG: {fileID: 1633555179}
 --- !u!54 &1197968537
 Rigidbody:
   m_ObjectHideFlags: 0
