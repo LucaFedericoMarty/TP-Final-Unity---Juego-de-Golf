@@ -45,6 +45,7 @@ public class PelotaMovement : MonoBehaviour
         {
             clon = Instantiate(prefabPelotitas);
             clon.transform.Translate(-7, 5, i);
+            Destroy(clon, 2);
         }
     }
 
@@ -60,14 +61,14 @@ public class PelotaMovement : MonoBehaviour
 
         contadorTiros.text = contadorDeTiros.ToString(); // Hago que la variable que cuente los tires se convierta a String, para que asi le podamos pasar esta informacion a una variable de texto que va a mostrar por pantalla la cantidad de tiros restantes
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             transform.eulerAngles += new Vector3(0, rotation, 0);
         }
 
         // Si toca la letra A, la rotacion de la pelota aumenta en el eje Y.
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles -= new Vector3(0, rotation, 0);
         }
