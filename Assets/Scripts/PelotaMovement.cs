@@ -61,6 +61,7 @@ public class PelotaMovement : MonoBehaviour
 
         contadorTiros.text = contadorDeTiros.ToString(); // Hago que la variable que cuente los tires se convierta a String, para que asi le podamos pasar esta informacion a una variable de texto que va a mostrar por pantalla la cantidad de tiros restantes
 
+
         if (Input.GetKeyDown(KeyCode.D))
         {
             transform.eulerAngles += new Vector3(0, rotation, 0);
@@ -101,7 +102,7 @@ public class PelotaMovement : MonoBehaviour
 
         // Si la pelota hizo colision con el objeto designado y si la cantidad de tiros que lleva es mayor a 0, entonces gano, por lo que lo llevamos a la scene de Ganaste
 
-        if (contadorDeTiros == 0)
+        if (contadorDeTiros == -1)
         {
             SceneManager.LoadScene("Perdiste");
         }
@@ -162,5 +163,19 @@ public class PelotaMovement : MonoBehaviour
         //    // Hacer el movimiento con variables inresadas por el usuario
         //}
 
+    }
+
+    void OnCollisionStay(Collision col)
+    {
+        if (col.gameObject.name == "Hielo")
+        {
+            translation += 0.5f;
+        }
+
+
+        if (col.gameObject.name == "Arena")
+        {
+            translation -= 2f;
+        }
     }
 }
