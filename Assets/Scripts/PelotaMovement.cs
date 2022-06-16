@@ -81,6 +81,7 @@ public class PelotaMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(transform.forward * translation, ForceMode.Impulse);
+                //rb.AddForce(new Vector3(Input.GetAxis("Vertical")) * .5, ForceMode.VelocityChange);
                 contadorDeTiros--;
                 timeElapsed = 0;
             }
@@ -169,13 +170,13 @@ public class PelotaMovement : MonoBehaviour
     {
         if (col.gameObject.name == "Hielo")
         {
-            translation += 0.5f;
+            translation += 0.1f;
         }
 
 
         if (col.gameObject.name == "Arena")
         {
-            translation -= 2f;
+            translation -= 0.5f;
         }
     }
 }
