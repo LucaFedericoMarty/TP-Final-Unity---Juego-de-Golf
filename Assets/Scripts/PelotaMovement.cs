@@ -81,6 +81,7 @@ public class PelotaMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(transform.forward * translation, ForceMode.Impulse);
+                //rb.AddForce(translation, 0, -rotation, ForceMode.Impulse);
                 //rb.AddForce(new Vector3(Input.GetAxis("Vertical")) * .5, ForceMode.VelocityChange);
                 contadorDeTiros--;
                 timeElapsed = 0;
