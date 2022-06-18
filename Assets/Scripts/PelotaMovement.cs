@@ -85,6 +85,7 @@ public class PelotaMovement : MonoBehaviour
                 //rb.AddForce(translation, 0, -rotation, ForceMode.Impulse);
                 //rb.AddForce(new Vector3(Input.GetAxis("Vertical")) * .5, ForceMode.VelocityChange);
                 //rb.AddForce(new Vector3(1,0,0) * translation, ForceMode.Impulse);
+                //rb.AddForce(translation, 0, -rotation);
                 contadorDeTiros--;
                 timeElapsed = 0;
             }
