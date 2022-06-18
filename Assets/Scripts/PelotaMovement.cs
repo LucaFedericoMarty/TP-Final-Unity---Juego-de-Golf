@@ -19,6 +19,8 @@ public class PelotaMovement : MonoBehaviour
     public  float rotation;
     public float translation;
 
+    Vector3 constMov;
+
     // Componente rigidbody de la Pelota
     Rigidbody rb;
 
@@ -52,7 +54,6 @@ public class PelotaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         timeElapsed += Time.deltaTime; // Cuento el tiempo que paso desde que se inicio el programa y lo guardo en una variable
         contadorTiempo.text = Mathf.Floor(timeElapsed).ToString(); // Al tiempo que paso, lo voy redondeando y se paso a una variable de texto, para que vaya mostrando por pantalla cuanto tiempo paso
 
@@ -83,6 +84,7 @@ public class PelotaMovement : MonoBehaviour
                 rb.AddForce(transform.forward * translation, ForceMode.Impulse);
                 //rb.AddForce(translation, 0, -rotation, ForceMode.Impulse);
                 //rb.AddForce(new Vector3(Input.GetAxis("Vertical")) * .5, ForceMode.VelocityChange);
+                //rb.AddForce(new Vector3(1,0,0) * translation, ForceMode.Impulse);
                 contadorDeTiros--;
                 timeElapsed = 0;
             }
