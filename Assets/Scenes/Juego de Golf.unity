@@ -1509,7 +1509,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146398732}
-  m_LocalRotation: {x: 0.24071702, y: 0.6648724, z: -0.24071705, w: 0.6648724}
+  m_LocalRotation: {x: 0.24071702, y: 0.66487247, z: -0.24071705, w: 0.66487235}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entroPelota: 0
   rotation: 1
-  translation: 5
+  translation: 0
   contadorTiempo: {fileID: 130364532}
   contadorTiros: {fileID: 276768947}
   prefabPelotitas: {fileID: 9201646022114531055, guid: 93779423d63bc7340aa5252c2c3dee91,
@@ -2038,7 +2038,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413541955}
-  m_LocalRotation: {x: 0.22334765, y: 0.6709068, z: -0.22334768, w: 0.67090666}
+  m_LocalRotation: {x: 0.22334763, y: 0.6709068, z: -0.22334768, w: 0.67090666}
   m_LocalPosition: {x: -6.7699995, y: 2.8, z: 0.010000357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2069,7 +2069,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484209287}
-  m_LocalRotation: {x: 0.22334766, y: 0.6709067, z: -0.22334768, w: 0.6709067}
+  m_LocalRotation: {x: 0.22334765, y: 0.6709068, z: -0.22334768, w: 0.67090666}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2478,7 +2478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1926439581
 Transform:
   m_ObjectHideFlags: 0
