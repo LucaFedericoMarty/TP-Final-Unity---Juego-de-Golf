@@ -18,6 +18,7 @@ public class PelotaMovement : MonoBehaviour
     float timeElapsed;
     public  float rotation;
     public float translation;
+    //float horizontalSpeed;
 
     Vector3 constMov;
 
@@ -41,6 +42,8 @@ public class PelotaMovement : MonoBehaviour
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros"); // Agarro el valor que se ingreso en el scrpit de GuardarTirosPasarEscena y lo guardo en una variable local
         contadorDeTiros = cantidadDeTiros; // Le guardo el valor de los tiros totales a una variable que va a iniciar con ese valor, para luego ir sabiendo la cantidad de tiros que tiene
 
+        //horizontalSpeed = 5f;
+
         GameObject clon;
 
         for (int i = 0; i < cantidadDeTiros; i++)
@@ -62,6 +65,7 @@ public class PelotaMovement : MonoBehaviour
 
         contadorTiros.text = contadorDeTiros.ToString(); // Hago que la variable que cuente los tires se convierta a String, para que asi le podamos pasar esta informacion a una variable de texto que va a mostrar por pantalla la cantidad de tiros restantes
 
+        //translation = horizontalSpeed * Input.GetAxis("Mouse Y");
 
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -77,28 +81,26 @@ public class PelotaMovement : MonoBehaviour
 
         // Si toca la letra A, la rotacion de la pelota disminuye en el eje Y.
 
-        if (timeElapsed < 30)
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
-            {
-                rb.AddForce(transform.forward * translation, ForceMode.Impulse);
-                //rb.AddForce(translation, 0, -rotation, ForceMode.Impulse);
-                //rb.AddForce(new Vector3(Input.GetAxis("Vertical")) * .5, ForceMode.VelocityChange);
-                //rb.AddForce(new Vector3(1,0,0) * translation, ForceMode.Impulse);
-                //rb.AddForce(translation, 0, -rotation);
-                contadorDeTiros--;
-                timeElapsed = 0;
-            }
-
-            // Si toca tanto la el click izquierdo como la tecla de espacio, el tiro se ejecuta
-            // Ademas, le resta un tiro puesto que ya se hizo uno
-            // Por ultimo, reinicia el contador de tiempo restante
-
-            //if (Input.GetKeyDown(KeyCode.Mouse1))
-            //{
-            //    translation = 0;
-            //}
+            rb.AddForce(transform.forward * translation, ForceMode.Impulse);
+            //rb.AddForce(transform.forward * -translation, ForceMode.Impulse);
+            //rb.AddForce(translation, 0, -rotation, ForceMode.Impulse);
+            //rb.AddForce(new Vector3(Input.GetAxis("Vertical")) * .5, ForceMode.VelocityChange);
+            //rb.AddForce(new Vector3(1,0,0) * translation, ForceMode.Impulse);
+            //rb.AddForce(translation, 0, -rotation);
+            contadorDeTiros--;
+            timeElapsed = 0;
         }
+
+        // Si toca tanto la el click izquierdo como la tecla de espacio, el tiro se ejecuta
+        // Ademas, le resta un tiro puesto que ya se hizo uno
+        // Por ultimo, reinicia el contador de tiempo restante
+
+        //if (Input.GetKeyDown(KeyCode.Mouse1))
+        //{
+        //   translation = 0;
+        //}
 
         if (entroPelota == true && contadorDeTiros > 0)
         {
