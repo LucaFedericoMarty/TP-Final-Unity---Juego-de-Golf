@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: a1b1a60b47599d54f9f77494bd023c58
+guid: cd1d771fec0acce42a007bcf6fc64ebe
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: Arena.001
+    2100002: Arena Oscura.001
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Arena
   externalObjects: {}
   materials:
     importMaterials: 1
