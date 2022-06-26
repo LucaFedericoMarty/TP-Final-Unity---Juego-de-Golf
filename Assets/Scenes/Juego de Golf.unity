@@ -2032,7 +2032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entroPelota: 0
   rotation: 1
-  translation: 0
+  translation: 5
   contadorTiempo: {fileID: 130364532}
   contadorTiros: {fileID: 276768947}
   prefabPelotitas: {fileID: 9201646022114531055, guid: 93779423d63bc7340aa5252c2c3dee91,
