@@ -34,6 +34,15 @@ public class PelotaMovement : MonoBehaviour
     // Traigo el script de tocaGanas para agarrar el valor de una variable
     public tocaGanas tG;
 
+    // Declaro las camaras para activarlas posteriormente
+
+    public Camera CamPasto;
+    public Camera CamHielo;
+    public Camera CamArena;
+    public Camera CamPastoD;
+    public Camera CamHieloD;
+    public Camera CamArenaD;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +61,10 @@ public class PelotaMovement : MonoBehaviour
             clon.transform.Translate(-7, 5, i);
             Destroy(clon, 2);
         }
+
+        CamPasto.enabled = true;
+        CamHielo.enabled = false;
+        CamArena.enabled = false;
     }
 
     // Update is called once per frame
@@ -169,10 +182,9 @@ public class PelotaMovement : MonoBehaviour
         //    contadorDeTiros++;
         //    // Hacer el movimiento con variables inresadas por el usuario
         //}
-
     }
 
-    void OnCollisionStay(Collision col)
+    void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "Hielo")
         {
@@ -183,6 +195,27 @@ public class PelotaMovement : MonoBehaviour
         if (col.gameObject.name == "Arena")
         {
             translation -= 0.5f;
+        }
+    }
+
+    void OnCollisionStay(Collision col)
+    {
+        if (col.gameObject.name == "Pasto")
+        {
+            CamPasto.enabled = true;
+        }
+
+        if (col.gameObject.name == "Hielo")
+        {
+            CamPasto.enabled = false;
+            CamHielo.enabled = true;
+        }
+
+
+        if (col.gameObject.name == "Arena")
+        {
+            CamHielo.enabled = false;
+            CamArena.enabled = true;
         }
     }
 }

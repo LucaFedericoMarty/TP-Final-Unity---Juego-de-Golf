@@ -7,11 +7,13 @@ public class objetoDuplicaOnTouch : MonoBehaviour
     public GameObject obstaculoMultiplicador;
     //float separacion = -0.1391141f;
     float separacion;
+    int counter;
 
     // Start is called before the first frame update
     void Start()
     {
         separacion = obstaculoMultiplicador.transform.position.z;
+        counter = 1;
     }
 
     // Update is called once per frame
@@ -22,7 +24,6 @@ public class objetoDuplicaOnTouch : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        int counter = 0;
         GameObject clon;
 
         if (col.gameObject.name == "Pelota de Golf")
