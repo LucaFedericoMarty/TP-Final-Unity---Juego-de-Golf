@@ -30,7 +30,7 @@ public class objetoDuplicaOnTouch : MonoBehaviour
             {
                 clon = Instantiate(obstaculoMultiplicador);
                 separacion = separacion + 0.5f;
-                clon.transform.position = new Vector3(clon.transform.position.x, 0.356f, separacion);
+                clon.transform.position = new Vector3(clon.transform.position.x, 0.2259611f, separacion);
                 counter++;
             }
             
