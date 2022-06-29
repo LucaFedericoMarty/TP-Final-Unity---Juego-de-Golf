@@ -13,6 +13,6 @@ public class MovimientoAspas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.eulerAngles += new Vector3(0, 4f, 0);
+        transform.Rotate(0, 4f, 0);
     }
 }

@@ -39,9 +39,6 @@ public class PelotaMovement : MonoBehaviour
     public Camera CamPasto;
     public Camera CamHielo;
     public Camera CamArena;
-    public Camera CamPastoD;
-    public Camera CamHieloD;
-    public Camera CamArenaD;
 
     // Start is called before the first frame update
     void Start()
@@ -188,7 +185,7 @@ public class PelotaMovement : MonoBehaviour
     {
         if (col.gameObject.name == "Hielo")
         {
-            translation += 0.1f;
+            translation += 0.8f;
         }
 
 
