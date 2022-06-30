@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,8 +175,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 64645495}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &64645497
-BoxCollider:
+--- !u!64 &64645497
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -185,9 +185,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0039994074, y: 0.009996249, z: 0.005}
-  m_Center: {x: 0.000024846056, y: -0.00088672497, z: -0.00076693174}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: cd1d771fec0acce42a007bcf6fc64ebe, type: 3}
 --- !u!1 &68824013 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d3bc874c17e1c1e45a9ec21d983f7139,
@@ -1655,9 +1656,6 @@ MonoBehaviour:
   CamPasto: {fileID: 262058673}
   CamHielo: {fileID: 1088550836}
   CamArena: {fileID: 1892908444}
-  CamPastoD: {fileID: 0}
-  CamHieloD: {fileID: 0}
-  CamArenaD: {fileID: 0}
 --- !u!54 &1197968537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2249,7 +2247,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0015, y: 0.0015, z: 0.0025}
+  m_Size: {x: 0.0015, y: 0.0015, z: 0.0001}
   m_Center: {x: 0.000024846056, y: 0.002557349, z: 0.0007927327}
 --- !u!114 &1766062028
 MonoBehaviour:

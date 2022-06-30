@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PelotaMovement : MonoBehaviour
 {
     //Variable Bool
-    bool isPressing;
+    //bool isPressing;
     public bool entroPelota;
 
     // Variables Int
@@ -18,7 +18,7 @@ public class PelotaMovement : MonoBehaviour
     float timeElapsed;
     public  float rotation;
     public float translation;
-    //float horizontalSpeed;
+    //float verticalSpeed;
 
     Vector3 constMov;
 
@@ -43,12 +43,17 @@ public class PelotaMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeElapsed = 30;
+
         rb = GetComponent<Rigidbody>(); // Agarro el componente RigidBody de mi Script
         //isPressing = false; Variable que no utilizo mas, pero la conservo para ver si en el futuro puedo cambiar la mecanica del funcionamiento del tiro
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros"); // Agarro el valor que se ingreso en el scrpit de GuardarTirosPasarEscena y lo guardo en una variable local
         contadorDeTiros = cantidadDeTiros; // Le guardo el valor de los tiros totales a una variable que va a iniciar con ese valor, para luego ir sabiendo la cantidad de tiros que tiene
 
-        //horizontalSpeed = 5f;
+
+        //isPressing = false;
+
+        //verticalSpeed = 5f;
 
         GameObject clon;
 
@@ -67,15 +72,28 @@ public class PelotaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeElapsed += Time.deltaTime; // Cuento el tiempo que paso desde que se inicio el programa y lo guardo en una variable
+        timeElapsed -= Time.deltaTime; // Cuento el tiempo que paso desde que se inicio el programa y lo guardo en una variable
         contadorTiempo.text = Mathf.Floor(timeElapsed).ToString(); // Al tiempo que paso, lo voy redondeando y se paso a una variable de texto, para que vaya mostrando por pantalla cuanto tiempo paso
-
-        //rotation *= Time.deltaTime;
-        //translation *= Time.deltaTime;
 
         contadorTiros.text = contadorDeTiros.ToString(); // Hago que la variable que cuente los tires se convierta a String, para que asi le podamos pasar esta informacion a una variable de texto que va a mostrar por pantalla la cantidad de tiros restantes
 
         //translation = horizontalSpeed * Input.GetAxis("Mouse Y");
+
+
+        //if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    isPressing = true;
+        //}
+
+        //if (isPressing == true)
+        //{       
+        //    translation = verticalSpeed * Input.GetAxis("Mouse Y");
+        //}
+
+        //if (Input.GetKeyUp(KeyCode.Mouse0))
+        //{
+        //    isPressing = false;
+        //}
 
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -91,7 +109,7 @@ public class PelotaMovement : MonoBehaviour
 
         // Si toca la letra A, la rotacion de la pelota disminuye en el eje Y.
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) //(Input.GetKeyUp(KeyCode.Mouse0)
         {
             rb.AddForce(transform.forward * translation, ForceMode.Impulse);
             //rb.AddForce(transform.forward * -translation, ForceMode.Impulse);
@@ -100,7 +118,8 @@ public class PelotaMovement : MonoBehaviour
             //rb.AddForce(new Vector3(1,0,0) * translation, ForceMode.Impulse);
             //rb.AddForce(translation, 0, -rotation);
             contadorDeTiros--;
-            timeElapsed = 0;
+            timeElapsed = 30;
+            //isPressing = false;
         }
 
         // Si toca tanto la el click izquierdo como la tecla de espacio, el tiro se ejecuta
@@ -126,7 +145,7 @@ public class PelotaMovement : MonoBehaviour
 
         // Si se le acaban lo tiros, vamos a la escena de que perdio
 
-        if (timeElapsed > 30)
+        if (timeElapsed < 0)
         {
             SceneManager.LoadScene("Perdiste");
         }
