@@ -53,7 +53,7 @@ public class PelotaMovement : MonoBehaviour
 
         //isPressing = false;
 
-        //verticalSpeed = 5f;
+        //verticalSpeed = 8f;
 
         GameObject clon;
 
@@ -86,7 +86,7 @@ public class PelotaMovement : MonoBehaviour
         //}
 
         //if (isPressing == true)
-        //{       
+        //{
         //    translation = verticalSpeed * Input.GetAxis("Mouse Y");
         //}
 
@@ -109,7 +109,7 @@ public class PelotaMovement : MonoBehaviour
 
         // Si toca la letra A, la rotacion de la pelota disminuye en el eje Y.
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) //(Input.GetKeyUp(KeyCode.Mouse0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) //(Input.GetKeyUp(KeyCode.Mouse0))
         {
             rb.AddForce(transform.forward * translation, ForceMode.Impulse);
             //rb.AddForce(transform.forward * -translation, ForceMode.Impulse);
