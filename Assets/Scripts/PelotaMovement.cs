@@ -40,6 +40,18 @@ public class PelotaMovement : MonoBehaviour
     public Camera CamHielo;
     public Camera CamArena;
 
+
+    public LineRenderer LR;
+
+    public Material MatLR;
+
+    public Color startColor = Color.white;
+    public Color endColor = Color.clear;
+
+    public float startWidth = 0.2f;
+    public float endWidth = 0.0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +62,19 @@ public class PelotaMovement : MonoBehaviour
         cantidadDeTiros = PlayerPrefs.GetInt("Numero de Tiros"); // Agarro el valor que se ingreso en el scrpit de GuardarTirosPasarEscena y lo guardo en una variable local
         contadorDeTiros = cantidadDeTiros; // Le guardo el valor de los tiros totales a una variable que va a iniciar con ese valor, para luego ir sabiendo la cantidad de tiros que tiene
 
+        LR = GetComponent<LineRenderer>();
+
+        LR.enabled = false;
+        LR.positionCount = 2;
+
+        LR.material = MatLR;
+        LR.startWidth = startWidth;
+        LR.endWidth = endWidth;
+
+        LR.startColor = startColor;
+        LR.endColor = endColor;
+
+        LR.numCapVertices = 20;
 
         //isPressing = false;
 
@@ -122,14 +147,14 @@ public class PelotaMovement : MonoBehaviour
             //isPressing = false;
         }
 
-        // Si toca tanto la el click izquierdo como la tecla de espacio, el tiro se ejecuta
-        // Ademas, le resta un tiro puesto que ya se hizo uno
-        // Por ultimo, reinicia el contador de tiempo restante
+        //Si toca tanto la el click izquierdo como la tecla de espacio, el tiro se ejecuta
+        //Ademas, le resta un tiro puesto que ya se hizo uno
+        //Por ultimo, reinicia el contador de tiempo restante
 
-        //if (Input.GetKeyDown(KeyCode.Mouse1))
-        //{
-        //   translation = 0;
-        //}
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            translation = 0;
+        }
 
         if (entroPelota == true && contadorDeTiros > 0)
         {
@@ -198,6 +223,28 @@ public class PelotaMovement : MonoBehaviour
         //    contadorDeTiros++;
         //    // Hacer el movimiento con variables inresadas por el usuario
         //}
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 startPos = Camera.current.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward;
+            LR.SetPosition(0, startPos);
+            LR.SetPosition(1, startPos);
+            LR.enabled = true;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 endPos = Camera.current.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward;
+            LR.SetPosition(1, endPos);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            LR.enabled = false;
+            Vector3 inputForce = LR.GetPosition(0) - LR.GetPosition(1);
+            rb.AddForce(inputForce, ForceMode.Impulse);
+        }
     }
 
     void OnCollisionEnter(Collision col)
