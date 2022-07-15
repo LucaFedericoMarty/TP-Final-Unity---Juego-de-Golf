@@ -1658,11 +1658,6 @@ MonoBehaviour:
   CamHielo: {fileID: 1088550836}
   CamArena: {fileID: 1892908444}
   LR: {fileID: 0}
-  MatLR: {fileID: 0}
-  startColor: {r: 1, g: 1, b: 1, a: 1}
-  endColor: {r: 0, g: 0, b: 0, a: 0}
-  startWidth: 0.2
-  endWidth: 0
 --- !u!54 &1197968537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1790,7 +1785,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 1, z: -5}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
@@ -1799,8 +1794,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.037647247
-        value: 0.23958397
+        time: 0.042354584
+        value: 0.15625572
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1808,8 +1803,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.52235293
-        value: 0.083333254
+        time: 0.43058658
+        value: 0.036458254
         inSlope: 0
         outSlope: 0
         tangentMode: 0

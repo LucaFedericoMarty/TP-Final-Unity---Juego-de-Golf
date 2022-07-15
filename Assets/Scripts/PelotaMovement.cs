@@ -43,13 +43,13 @@ public class PelotaMovement : MonoBehaviour
 
     public LineRenderer LR;
 
-    public Material MatLR;
+    //public Material MatLR;
 
-    public Color startColor = Color.white;
-    public Color endColor = Color.clear;
+    //public Color startColor = Color.white;
+    //public Color endColor = Color.clear;
 
-    public float startWidth = 0.2f;
-    public float endWidth = 0.0f;
+    //public float startWidth = 0.2f;
+    //public float endWidth = 0.0f;
 
 
     // Start is called before the first frame update
@@ -64,15 +64,15 @@ public class PelotaMovement : MonoBehaviour
 
         LR = GetComponent<LineRenderer>();
 
-        LR.enabled = false;
-        LR.positionCount = 2;
+        //LR.enabled = false;
+        //LR.positionCount = 2;
 
-        LR.material = MatLR;
-        LR.startWidth = startWidth;
-        LR.endWidth = endWidth;
+        //LR.material = MatLR;
+        //LR.startWidth = startWidth;
+        //LR.endWidth = endWidth;
 
-        LR.startColor = startColor;
-        LR.endColor = endColor;
+        //LR.startColor = startColor;
+        //LR.endColor = endColor;
 
         LR.numCapVertices = 20;
 
